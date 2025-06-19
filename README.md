@@ -27,6 +27,7 @@ For acquisition`aac-lc` `MV` `lyrics` You must fill in the information with a su
 Original script by Sorrow. Modified by me to include some fixes and improvements.
 
 ## How to use
+
 1. Make sure the decryption program [wrapper](https://github.com/zhaarey/wrapper) is running
 2. Start downloading some albums: `go run main.go https://music.apple.com/us/album/whenever-you-need-somebody-2022-remaster/1624945511`.
 3. Start downloading single song: `go run main.go --song https://music.apple.com/us/album/never-gonna-give-you-up-2022-remaster/1624945511?i=1624945512` or `go run main.go https://music.apple.com/us/song/you-move-me-2022-remaster/1624945520`.
@@ -45,3 +46,23 @@ Original script by Sorrow. Modified by me to include some fixes and improvements
 3. Find the cookie named `media-user-token` and copy its value
 4. Paste the cookie value obtained in step 3 into the config.yaml and save it
 5. Start the script as usual
+
+## Quick Start
+
+```bash
+git clone https://github.com/zhaarey/wrapper.git
+cd wrapper
+docker compose build
+```
+
+```yaml
+environment:
+  args: "-L your-email@example.com:yourpassword -F -H 0.0.0.0"
+```
+
+[!] Enter your 2FA code into rootfs/data/2fa.txt
+
+```
+echo -n 123456 > ./rootfs/data/2fa.txt
+
+```
